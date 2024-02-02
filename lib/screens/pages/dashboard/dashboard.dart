@@ -4,6 +4,7 @@ import 'package:ebixcash/screens/pages/dashboard/components/walletBalance/wallet
 import 'package:flutter/material.dart';
 
 import '../../../components/drawer/appDrawer.dart';
+import 'components/askADoctor/AskADoctor.dart';
 import 'components/insurance/InsuranceComponent.dart';
 import 'components/rechargeBillPayment/rechargeBillPayment.dart';
 import 'components/travelBooking/TravelBooking.dart';
@@ -17,9 +18,7 @@ class DashboardScreen extends StatefulWidget {
 
 class _DashboardScreenState extends State<DashboardScreen> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-  final Shader linearGradient = const LinearGradient(
-    colors: <Color>[Color(0xffDA44bb), Color(0xff8921aa)],
-  ).createShader(const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
+
 
   @override
   Widget build(BuildContext context) {
@@ -73,36 +72,33 @@ class _DashboardScreenState extends State<DashboardScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              WalletBalance(),
-              SizedBox(
+              const WalletBalance(),
+              const SizedBox(
                 height: 10,
               ),
-              EbixCashServices(),
-              SizedBox(
+              const EbixCashServices(),
+              const SizedBox(
                 height: 25,
               ),
-              RechargeAndBillPayment(),
-              SizedBox(
+              const RechargeAndBillPayment(),
+              const SizedBox(
                 height: 25,
               ),
-              InsuranceComponent(),
-              SizedBox(
+              const InsuranceComponent(),
+              const SizedBox(
                 height: 30,
               ),
-              TravelBookingComponent(),
-              SizedBox(
+              const TravelBookingComponent(),
+              const SizedBox(
                 height: 30,
               ),
-              TravelOffer(),
-              Text(
-                'Hello Gradients!',
-                style: TextStyle(
-                    fontSize: 60.0,
-                    fontWeight: FontWeight.bold,
-                    foreground: Paint()..shader = linearGradient),
+              const TravelOffer(),
+              const SizedBox(
+                height: 30,
               ),
-              SizedBox(
-                height: 200,
+              AskADoctor(),
+              const SizedBox(
+                height: 30,
               ),
             ],
           ),

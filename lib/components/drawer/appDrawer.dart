@@ -1,5 +1,7 @@
+import 'package:ebixcash/components/drawer/upgradeWallet/UpgradeWallet.dart';
+import 'package:ebixcash/components/drawer/userInfo/UserInfo.dart';
+import 'package:ebixcash/components/drawer/userQRCode/UserQRCode.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class AppDrawer extends StatefulWidget {
   const AppDrawer({super.key});
@@ -60,56 +62,20 @@ class _AppDrawerState extends State<AppDrawer> {
               )
           ),
           width: MediaQuery.of(context).size.width,
-          child: Column(
+          child: const Column(
             children: [
-              Container(
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(50),
-                  border: Border.all(color: Colors.white),
-                ),
-                child: Stack(
-                  clipBehavior: Clip.none,
-                  alignment: Alignment.center,
-                  children: [
-                    Image.asset("assets/images/indian_flag.png"),
-                    Positioned(
-                        right: -10,
-                        top: 50,
-                        child: InkWell(
-                          onTap: (){},
-                          child: Container(
-                            width: 30,
-                            height: 30,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: Colors.white,
-                            ),
-                            child: Image.asset("assets/images/camera.png"),
-                          ),
-                        ))
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              const Text("Jane Cooper", style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
-                fontFamily: "Montserrat"
-              ),),
+              UserInfo(),
               SizedBox(
-                height: 200,
+                height: 60,
               ),
-              Text("data"),
+              UserQRCode(),
               SizedBox(
-                height: 200,
+                height: 25,
               ),
-              Text("data")
+              UpgradeWallet(),
+              SizedBox(
+                height: 25,
+              ),
             ],
           )
         ),

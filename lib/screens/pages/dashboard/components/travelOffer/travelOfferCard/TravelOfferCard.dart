@@ -11,6 +11,11 @@ class TravelOfferCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shadowColor: const Color.fromRGBO(149, 52, 114, 0.5),
+      elevation: 2,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15)
+      ),
       child: Container(
         width: 300,
         padding: const EdgeInsets.all(20),
