@@ -19,6 +19,12 @@ class _RechargeAndBillPaymentState extends State<RechargeAndBillPayment> with Ti
     parent: _controller,
     curve: Curves.easeIn,
   );
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _controller.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

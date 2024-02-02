@@ -1,4 +1,5 @@
 import 'package:ebixcash/screens/pages/dashboard/components/services/EbixcashServices.dart';
+import 'package:ebixcash/screens/pages/dashboard/components/travelOffer/TravelOffer.dart';
 import 'package:ebixcash/screens/pages/dashboard/components/walletBalance/walletBalance.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,9 @@ class DashboardScreen extends StatefulWidget {
 
 class _DashboardScreenState extends State<DashboardScreen> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  final Shader linearGradient = const LinearGradient(
+    colors: <Color>[Color(0xffDA44bb), Color(0xff8921aa)],
+  ).createShader(const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
 
   @override
   Widget build(BuildContext context) {
@@ -36,16 +40,27 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
         ),
         leading: IconButton(
+          color: Colors.white,
           onPressed: () {
             scaffoldKey.currentState!.openDrawer();
           },
-          icon: const Icon(Icons.menu),
+          icon: const Icon(
+              Icons.menu,
+          ),
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.notifications_outlined))
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                  Icons.notifications_outlined,
+                  color: Colors.white
+              )
+          )
         ],
       ),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        physics: ScrollPhysics(),
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           decoration: const BoxDecoration(
@@ -55,7 +70,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 alignment: Alignment.topCenter
             )
           ),
-          child: const Column(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               WalletBalance(),
               SizedBox(
@@ -75,9 +91,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               TravelBookingComponent(),
               SizedBox(
-                height: 200,
+                height: 30,
               ),
-              Text("Hello"),
+              TravelOffer(),
+              Text(
+                'Hello Gradients!',
+                style: TextStyle(
+                    fontSize: 60.0,
+                    fontWeight: FontWeight.bold,
+                    foreground: Paint()..shader = linearGradient),
+              ),
               SizedBox(
                 height: 200,
               ),
