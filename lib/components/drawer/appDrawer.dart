@@ -1,7 +1,10 @@
+import 'package:ebixcash/components/drawer/createUpi/createUpi.dart';
 import 'package:ebixcash/components/drawer/upgradeWallet/UpgradeWallet.dart';
 import 'package:ebixcash/components/drawer/userInfo/UserInfo.dart';
 import 'package:ebixcash/components/drawer/userQRCode/UserQRCode.dart';
 import 'package:flutter/material.dart';
+
+import 'drawerMenuList/drawerMenuList.dart';
 
 class AppDrawer extends StatefulWidget {
   const AppDrawer({super.key});
@@ -62,7 +65,7 @@ class _AppDrawerState extends State<AppDrawer> {
               )
           ),
           width: MediaQuery.of(context).size.width,
-          child: const Column(
+          child: Column(
             children: [
               UserInfo(),
               SizedBox(
@@ -72,10 +75,20 @@ class _AppDrawerState extends State<AppDrawer> {
               SizedBox(
                 height: 25,
               ),
-              UpgradeWallet(),
+              Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      UpgradeWallet(),
+                      CreateUpi()
+                    ],
+                  ),
+              ),
               SizedBox(
                 height: 25,
               ),
+              DrawerMenuList()
             ],
           )
         ),

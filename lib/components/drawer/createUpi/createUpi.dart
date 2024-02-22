@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class UpgradeWallet extends StatefulWidget {
-  const UpgradeWallet({super.key});
+class CreateUpi extends StatefulWidget {
+  const CreateUpi({super.key});
 
   @override
-  State<UpgradeWallet> createState() => _UpgradeWalletState();
+  State<CreateUpi> createState() => _CreateUpiState();
 }
 
-class _UpgradeWalletState extends State<UpgradeWallet> {
+class _CreateUpiState extends State<CreateUpi> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
         // TODO
-        print("Upgrade wallet");
+        print("Create Upi");
       },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -34,7 +34,7 @@ class _UpgradeWalletState extends State<UpgradeWallet> {
               width: 10,
             ),
             const Text(
-              "Upgrade Wallet",
+              "Create Upi",
               style: TextStyle(
                 color: Color.fromRGBO(174, 32, 128, 1),
                 fontFamily: "Montserrat",

@@ -1,6 +1,11 @@
 import 'package:ebixcash/screens/getStarted/GetStartedScreen.dart';
 import 'package:ebixcash/screens/login/LoginScreen.dart';
 import 'package:ebixcash/screens/pages/dashboard/dashboard.dart';
+import 'package:ebixcash/screens/pages/drawer/helpSupport/help_support.dart';
+import 'package:ebixcash/screens/pages/drawer/helpSupport/moreQueries/contactUs/contact_us.dart';
+import 'package:ebixcash/screens/pages/drawer/myTransaction/my_transaction.dart';
+import 'package:ebixcash/screens/pages/drawer/rateUs/rate_us.dart';
+import 'package:ebixcash/screens/pages/drawer/savedCards/saved_cards.dart';
 import 'package:ebixcash/screens/register/RegisterScreen.dart';
 import 'package:ebixcash/screens/verifyOtp/verifyOtp.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +46,13 @@ class _MyAppState extends State<MyApp> {
         '/register' : (context) => const RegisterScreen(),
         '/login' : (context) => const LoginScreen(),
         '/verifyOtp' : (context) => const VerifyOtpScreen(),
-        '/dashboard' : (context) => const DashboardScreen()
+        '/dashboard' : (context) => const DashboardScreen(),
+        '/myTransaction' : (context) => const MyTransaction(),
+        '/savedCards' : (context) => const SavedCards(),
+        '/rateUs' : (context) => const RateUs(),
+        '/helpSupport' : (context) => const HelpSupport(),
+        '/contactus' : (context) => const ContactUs(),
+
       },
 
 
