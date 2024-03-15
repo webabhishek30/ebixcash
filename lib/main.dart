@@ -4,8 +4,10 @@ import 'package:ebixcash/screens/pages/dashboard/dashboard.dart';
 import 'package:ebixcash/screens/pages/drawer/helpSupport/help_support.dart';
 import 'package:ebixcash/screens/pages/drawer/helpSupport/moreQueries/contactUs/contact_us.dart';
 import 'package:ebixcash/screens/pages/drawer/myTransaction/my_transaction.dart';
+import 'package:ebixcash/screens/pages/drawer/profile/profile.dart';
 import 'package:ebixcash/screens/pages/drawer/rateUs/rate_us.dart';
 import 'package:ebixcash/screens/pages/drawer/savedCards/saved_cards.dart';
+import 'package:ebixcash/screens/pages/notifications/notifications.dart';
 import 'package:ebixcash/screens/register/RegisterScreen.dart';
 import 'package:ebixcash/screens/verifyOtp/verifyOtp.dart';
 import 'package:flutter/material.dart';
@@ -52,6 +54,8 @@ class _MyAppState extends State<MyApp> {
         '/rateUs' : (context) => const RateUs(),
         '/helpSupport' : (context) => const HelpSupport(),
         '/contactus' : (context) => const ContactUs(),
+        '/notifications' : (context) => const Notifications(),
+        '/profile' : (context) => const Profile(),
 
       },
 

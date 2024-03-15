@@ -39,14 +39,18 @@ class _AppDrawerState extends State<AppDrawer> {
         ),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/notifications");
+              },
               icon: const Icon(
                   Icons.notifications_outlined,
                   color: Colors.white,
               )
           ),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/profile");
+              },
               icon: const Icon(
                   Icons.settings_outlined,
                   color: Colors.white,

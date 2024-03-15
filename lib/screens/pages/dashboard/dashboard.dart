@@ -49,7 +49,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/notifications");
+              },
               icon: const Icon(
                   Icons.notifications_outlined,
                   color: Colors.white
