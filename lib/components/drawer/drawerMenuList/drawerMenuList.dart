@@ -26,7 +26,7 @@ class DrawerMenuList extends StatelessWidget {
       "title" : "Bank Accounts",
       "subtitle" : "Add/Remove your Bank Account",
       "icon" : "assets/images/bank.png",
-
+      "pageName": "/bankAccounts"
     },
     {
       "title" : "Add Beneficiary",

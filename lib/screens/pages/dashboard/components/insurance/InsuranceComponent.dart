@@ -10,7 +10,7 @@ class InsuranceComponent extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(15),
           boxShadow: const [
             BoxShadow(
                 blurRadius: 25,

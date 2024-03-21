@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../components/icons/gradientIcon/purpleGradientIcon.dart';
 
 class EbixCashServices extends StatelessWidget {
+
   const EbixCashServices({super.key});
 
   @override

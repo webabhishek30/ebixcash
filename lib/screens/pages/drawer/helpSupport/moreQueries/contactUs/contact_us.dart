@@ -69,369 +69,364 @@ class _ContactUsState extends State<ContactUs> {
         ],
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(20),
-              child: Form(
-                  key: _formKey,
-                  child: Column(
-                    children: [
-                      TextFormField(
-                        decoration: InputDecoration(
-                          hintText: "First Name",
-                          hintStyle: const TextStyle(
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          child: Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "First Name",
+                      hintStyle: const TextStyle(
+                          color: Color.fromRGBO(120, 120, 120, 1),
+                          fontSize: 14,
+                          fontFamily: "Montserrat"
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                            color: Color.fromRGBO(225, 225, 225, 1)
+                        ),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
+                    ),
+                    validator: (value){
+                      if(value!.isEmpty){
+                        return "Please enter first name.";
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Last Name",
+                      hintStyle: const TextStyle(
+                          color: Color.fromRGBO(120, 120, 120, 1),
+                          fontSize: 14,
+                          fontFamily: "Montserrat"
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                            color: Color.fromRGBO(225, 225, 225, 1)
+                        ),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
+                    ),
+                    validator: (value){
+                      if(value!.isEmpty){
+                        return "Please enter last name.";
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  TextFormField(
+                    keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(
+                      hintText: "Mobile Number",
+                      hintStyle: const TextStyle(
+                          color: Color.fromRGBO(120, 120, 120, 1),
+                          fontSize: 14,
+                          fontFamily: "Montserrat"
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                            color: Color.fromRGBO(225, 225, 225, 1)
+                        ),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
+                    ),
+                    validator: (value){
+                      if(value!.isEmpty){
+                        return "Please enter mobile number.";
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  DropdownButtonFormField(
+                      icon: Image.asset("assets/images/select_dropdown_arrow.png"),
+                      validator: (value){
+                        if(value == null || value.isEmpty){
+                          return "Please select category.";
+                        }
+                        return null;
+                      },
+                      isExpanded: true,
+                      decoration: InputDecoration(
+                        hintText: "Category",
+                        hintStyle: const TextStyle(
                             color: Color.fromRGBO(120, 120, 120, 1),
                             fontSize: 14,
                             fontFamily: "Montserrat"
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: const BorderSide(
                               color: Color.fromRGBO(225, 225, 225, 1)
-                            ),
-                            borderRadius: BorderRadius.circular(5),
                           ),
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
+                          borderRadius: BorderRadius.circular(5),
                         ),
-                        validator: (value){
-                          if(value!.isEmpty){
-                            return "Please enter first name.";
-                          }
-                          return null;
-                        },
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                       ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(
-                          hintText: "Last Name",
-                          hintStyle: const TextStyle(
-                              color: Color.fromRGBO(120, 120, 120, 1),
-                              fontSize: 14,
-                              fontFamily: "Montserrat"
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Color.fromRGBO(225, 225, 225, 1)
-                            ),
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
-                        ),
-                        validator: (value){
-                          if(value!.isEmpty){
-                            return "Please enter last name.";
-                          }
-                          return null;
-                        },
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      TextFormField(
-                        keyboardType: TextInputType.phone,
-                        decoration: InputDecoration(
-                          hintText: "Mobile Number",
-                          hintStyle: const TextStyle(
-                              color: Color.fromRGBO(120, 120, 120, 1),
-                              fontSize: 14,
-                              fontFamily: "Montserrat"
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Color.fromRGBO(225, 225, 225, 1)
-                            ),
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
-                        ),
-                        validator: (value){
-                          if(value!.isEmpty){
-                            return "Please enter mobile number.";
-                          }
-                          return null;
-                        },
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      DropdownButtonFormField(
-                          icon: Image.asset("assets/images/select_dropdown_arrow.png"),
-                          validator: (value){
-                            if(value == null || value.isEmpty){
-                              return "Please select category.";
-                            }
-                            return null;
-                          },
-                          isExpanded: true,
-                          decoration: InputDecoration(
-                            hintText: "Category",
-                            hintStyle: const TextStyle(
-                                color: Color.fromRGBO(120, 120, 120, 1),
-                                fontSize: 14,
-                                fontFamily: "Montserrat"
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Color.fromRGBO(225, 225, 225, 1)
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                          ),
-                          value: _selectedCategory,
-                          items: category.map((String val){
-                            return DropdownMenuItem<String>(
-                              value: val,
-                              child: Text(val),
-                            );
-                          }).toList(),
-                          onChanged: (value){
-                            setState(() {
-                              _selectedCategory = value!;
-                            });
-                          }
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      TextFormField(
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                          hintText: "Email",
-                          hintStyle: const TextStyle(
-                              color: Color.fromRGBO(120, 120, 120, 1),
-                              fontSize: 14,
-                              fontFamily: "Montserrat"
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Color.fromRGBO(225, 225, 225, 1)
-                            ),
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
-                        ),
-                        validator: (value){
-                          if(value!.isEmpty){
-                            return "Please enter your email address.";
-                          }
-                          return null;
-                        },
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      DropdownButtonFormField(
-                          icon: Image.asset("assets/images/select_dropdown_arrow.png"),
-                          validator: (value){
-                            if(value == null || value.isEmpty){
-                              return "Please select country.";
-                            }
-                            return null;
-                          },
-                          isExpanded: true,
-                          decoration: InputDecoration(
-                            hintText: "Country",
-                            hintStyle: const TextStyle(
-                                color: Color.fromRGBO(120, 120, 120, 1),
-                                fontSize: 14,
-                                fontFamily: "Montserrat"
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Color.fromRGBO(225, 225, 225, 1)
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                          ),
-                          value: _selectedCountry,
-                          items: countryList.map((String val){
-                            return DropdownMenuItem<String>(
-                              value: val,
-                              child: Text(val),
-                            );
-                          }).toList(),
-                          onChanged: (value){
-                            setState(() {
-                              _selectedCountry = value!;
-                            });
-                          }
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      DropdownButtonFormField(
-                          icon: Image.asset("assets/images/select_dropdown_arrow.png"),
-                          validator: (value){
-                            if(value == null || value.isEmpty){
-                              return "Please select industry.";
-                            }
-                            return null;
-                          },
-                          isExpanded: true,
-                          decoration: InputDecoration(
-                            hintText: "Industry",
-                            hintStyle: const TextStyle(
-                                color: Color.fromRGBO(120, 120, 120, 1),
-                                fontSize: 14,
-                                fontFamily: "Montserrat"
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Color.fromRGBO(225, 225, 225, 1)
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                          ),
-                          value: _selectedIndustry,
-                          items: industry.map((String val){
-                            return DropdownMenuItem<String>(
-                              value: val,
-                              child: Text(val),
-                            );
-                          }).toList(),
-                          onChanged: (value){
-                            setState(() {
-                              _selectedIndustry = value!;
-                            });
-                          }
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      TextFormField(
-                        keyboardType: TextInputType.multiline,
-                        maxLines: 4,
-                        decoration: InputDecoration(
-                          hintText: "Write your query...",
-                          hintStyle: const TextStyle(
-                              color: Color.fromRGBO(120, 120, 120, 1),
-                              fontSize: 14,
-                              fontFamily: "Montserrat"
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Color.fromRGBO(225, 225, 225, 1)
-                            ),
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
-                        ),
-                        validator: (value){
-                          if(value!.isEmpty){
-                            return "Please enter your query.";
-                          }
-                          return null;
-                        },
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      TextFormField(
-                        keyboardType: TextInputType.multiline,
-                        maxLines: 4,
-                        decoration: InputDecoration(
-                          hintText: "Additional information (Optional)",
-                          hintStyle: const TextStyle(
-                              color: Color.fromRGBO(120, 120, 120, 1),
-                              fontSize: 14,
-                              fontFamily: "Montserrat"
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Color.fromRGBO(225, 225, 225, 1)
-                            ),
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                    ],
-                  )
-              ),
-            ),
-            SizedBox(
-              height: 65,
-              width: MediaQuery.of(context).size.width,
-              child: ElevatedButton(
-                  style: const ButtonStyle(
-                      shape: MaterialStatePropertyAll(
-                          RoundedRectangleBorder(
-                              borderRadius: BorderRadius.zero
-                          )
-                      ),
-                      backgroundColor: MaterialStatePropertyAll(
-                          Color.fromRGBO(185, 26, 129, 1)
-                      )
+                      value: _selectedCategory,
+                      items: category.map((String val){
+                        return DropdownMenuItem<String>(
+                          value: val,
+                          child: Text(val),
+                        );
+                      }).toList(),
+                      onChanged: (value){
+                        setState(() {
+                          _selectedCategory = value!;
+                        });
+                      }
                   ),
-                  onPressed: (){
-                    final isValid = _formKey.currentState?.validate();
-                    if(!isValid!){
-                      return;
-                    }
-                    print(_selectedCategory);
-                    _formKey.currentState?.save();
-                    showDialog(
-                        context: context,
-                        builder: (context){
-                          Future.delayed(const Duration(seconds: 3), () {
-                            Navigator.of(context).pop();
-                          });
-
-                          // Return the AlertDialog widget
-                          return AlertDialog(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)
-                            ),
-                            contentPadding: const EdgeInsets.all(40),
-                            content: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image.asset("assets/images/checkmark.png"),
-                                const SizedBox(
-                                  height: 30,
-                                ),
-                                const Text(
-                                  "Congratulations! Your request has been accepted.",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 16,
-                                      fontFamily: "Montserrat"
-                                  ),
-                                )
-                              ],
-                            ),
-                          );
-                        }
-                    );
-                    Future.delayed(const Duration(seconds: 4), () {
-                      Navigator.of(context).pop();
-                    });
-                  },
-                  child: Text(
-                    "Submit Request".toUpperCase(),
-                    style: const TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                        fontFamily: "Montserrat"
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  TextFormField(
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      hintText: "Email",
+                      hintStyle: const TextStyle(
+                          color: Color.fromRGBO(120, 120, 120, 1),
+                          fontSize: 14,
+                          fontFamily: "Montserrat"
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                            color: Color.fromRGBO(225, 225, 225, 1)
+                        ),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
                     ),
-                  )
-              ),
-            ),
-          ],
+                    validator: (value){
+                      if(value!.isEmpty){
+                        return "Please enter your email address.";
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  DropdownButtonFormField(
+                      icon: Image.asset("assets/images/select_dropdown_arrow.png"),
+                      validator: (value){
+                        if(value == null || value.isEmpty){
+                          return "Please select country.";
+                        }
+                        return null;
+                      },
+                      isExpanded: true,
+                      decoration: InputDecoration(
+                        hintText: "Country",
+                        hintStyle: const TextStyle(
+                            color: Color.fromRGBO(120, 120, 120, 1),
+                            fontSize: 14,
+                            fontFamily: "Montserrat"
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              color: Color.fromRGBO(225, 225, 225, 1)
+                          ),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      ),
+                      value: _selectedCountry,
+                      items: countryList.map((String val){
+                        return DropdownMenuItem<String>(
+                          value: val,
+                          child: Text(val),
+                        );
+                      }).toList(),
+                      onChanged: (value){
+                        setState(() {
+                          _selectedCountry = value!;
+                        });
+                      }
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  DropdownButtonFormField(
+                      icon: Image.asset("assets/images/select_dropdown_arrow.png"),
+                      validator: (value){
+                        if(value == null || value.isEmpty){
+                          return "Please select industry.";
+                        }
+                        return null;
+                      },
+                      isExpanded: true,
+                      decoration: InputDecoration(
+                        hintText: "Industry",
+                        hintStyle: const TextStyle(
+                            color: Color.fromRGBO(120, 120, 120, 1),
+                            fontSize: 14,
+                            fontFamily: "Montserrat"
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              color: Color.fromRGBO(225, 225, 225, 1)
+                          ),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      ),
+                      value: _selectedIndustry,
+                      items: industry.map((String val){
+                        return DropdownMenuItem<String>(
+                          value: val,
+                          child: Text(val),
+                        );
+                      }).toList(),
+                      onChanged: (value){
+                        setState(() {
+                          _selectedIndustry = value!;
+                        });
+                      }
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  TextFormField(
+                    keyboardType: TextInputType.multiline,
+                    maxLines: 4,
+                    decoration: InputDecoration(
+                      hintText: "Write your query...",
+                      hintStyle: const TextStyle(
+                          color: Color.fromRGBO(120, 120, 120, 1),
+                          fontSize: 14,
+                          fontFamily: "Montserrat"
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                            color: Color.fromRGBO(225, 225, 225, 1)
+                        ),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
+                    ),
+                    validator: (value){
+                      if(value!.isEmpty){
+                        return "Please enter your query.";
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  TextFormField(
+                    keyboardType: TextInputType.multiline,
+                    maxLines: 4,
+                    decoration: InputDecoration(
+                      hintText: "Additional information (Optional)",
+                      hintStyle: const TextStyle(
+                          color: Color.fromRGBO(120, 120, 120, 1),
+                          fontSize: 14,
+                          fontFamily: "Montserrat"
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                            color: Color.fromRGBO(225, 225, 225, 1)
+                        ),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                ],
+              )
+          ),
         ),
       ),
+      bottomNavigationBar: SizedBox(
+        height: 65,
+        width: MediaQuery.of(context).size.width,
+        child: ElevatedButton(
+            style: const ButtonStyle(
+                shape: MaterialStatePropertyAll(
+                    RoundedRectangleBorder(
+                        borderRadius: BorderRadius.zero
+                    )
+                ),
+                backgroundColor: MaterialStatePropertyAll(
+                    Color.fromRGBO(185, 26, 129, 1)
+                )
+            ),
+            onPressed: (){
+              final isValid = _formKey.currentState?.validate();
+              if(!isValid!){
+                return;
+              }
+              print(_selectedCategory);
+              _formKey.currentState?.save();
+              showDialog(
+                  context: context,
+                  builder: (context){
+                    Future.delayed(const Duration(seconds: 3), () {
+                      Navigator.of(context).pop();
+                    });
 
+                    // Return the AlertDialog widget
+                    return AlertDialog(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)
+                      ),
+                      contentPadding: const EdgeInsets.all(40),
+                      content: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset("assets/images/checkmark.png"),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          const Text(
+                            "Congratulations! Your request has been accepted.",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 16,
+                                fontFamily: "Montserrat"
+                            ),
+                          )
+                        ],
+                      ),
+                    );
+                  }
+              );
+              Future.delayed(const Duration(seconds: 4), () {
+                Navigator.of(context).pop();
+              });
+            },
+            child: Text(
+              "Submit Request".toUpperCase(),
+              style: const TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16,
+                  fontFamily: "Montserrat"
+              ),
+            )
+        ),
+      ),
     );
   }
 }
