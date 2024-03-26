@@ -32,6 +32,7 @@ class DrawerMenuList extends StatelessWidget {
       "title" : "Add Beneficiary",
       "subtitle" : "Add/Remove beneficiary",
       "icon" : "assets/images/beneficiary.png",
+      "pageName": "/addBeneficiary"
     },
     {
       "title" : "KYC",
@@ -49,7 +50,7 @@ class DrawerMenuList extends StatelessWidget {
       "title" : "Complaint Status",
       "subtitle" : "Check status of your queries",
       "icon" : "assets/images/complaint_status.png",
-
+      "pageName": "/complaintStatus"
     },
     {
       "title" : "Security & Privacy",

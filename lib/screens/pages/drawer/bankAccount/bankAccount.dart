@@ -9,6 +9,13 @@ class BankAccountScreen extends StatefulWidget {
 
 class _BankAccountScreenState extends State<BankAccountScreen> {
 
+  String dropdownvalue = 'Check Balance';
+
+  List dropdownItem = [
+    "Check Balance",
+    "Remove Bank"
+  ];
+
   List bankAccountList = [
     {
       "bankName" : "Axis Bank 4255",
@@ -85,7 +92,218 @@ class _BankAccountScreenState extends State<BankAccountScreen> {
                 )),
                 trailing: IconButton(
                     onPressed: (){
+                      showModalBottomSheet(
+                          context: context,
+                          isDismissible: false,
+                          isScrollControlled: true,
+                          shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(25),
+                                topRight: Radius.circular(25),
 
+                              )
+                          ),
+                          builder: (BuildContext context){
+                            return Container(
+                              padding: EdgeInsets.only(
+                                  bottom: MediaQuery.of(context).viewInsets.bottom,
+                                  top: 20,
+                                  right: 20,
+                                  left: 20
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Align(
+                                    alignment: Alignment.topRight,
+                                    child: Container(
+                                      width: 20,
+                                      height: 20,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                          color: Colors.black12
+                                      ),
+                                      child: InkWell(
+                                        onTap: (){
+                                          Navigator.pop(context);
+                                        },
+                                        child: const Icon(
+                                          Icons.close,
+                                          color: Colors.white,
+                                          size: 13,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        InkWell(
+                                          overlayColor: const MaterialStatePropertyAll(
+                                              Colors.transparent
+                                          ),
+                                          onTap: (){
+
+                                          },
+                                          child: Container(
+                                            width: MediaQuery.of(context).size.width,
+                                            padding: const EdgeInsets.only(
+                                                bottom: 30
+                                            ),
+                                            decoration: const BoxDecoration(
+                                                border: Border(
+                                                    bottom: BorderSide(width: 1.5, color: Colors.black12)
+                                                )
+                                            ),
+                                            child: const Text("Current Balance", style: TextStyle(
+                                              fontSize: 18,
+                                              fontFamily: "Montserrat",
+                                              fontWeight: FontWeight.w600
+                                            ),),
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 30,
+                                        ),
+                                        InkWell(
+                                          overlayColor: const MaterialStatePropertyAll(
+                                              Colors.transparent
+                                          ),
+                                          onTap: (){
+                                            setState(() {
+                                              showDialog(context: context, builder: (BuildContext context) {
+                                                return Center(
+                                                  child: Container(
+                                                    width: MediaQuery.of(context).size.width,
+                                                    height: 250,
+                                                    margin: const EdgeInsets.symmetric(
+                                                        horizontal: 20
+                                                    ),
+                                                    padding: const EdgeInsets.all(40),
+                                                    decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(15),
+                                                        color: Colors.white
+                                                    ),
+                                                    child: Column(
+                                                      children: [
+                                                        const DefaultTextStyle(
+                                                          style: TextStyle(
+                                                              fontSize: 16,
+                                                              fontFamily: "Montserrat",
+                                                              fontWeight: FontWeight.w700,
+                                                              color: Color.fromRGBO(24, 24, 24, 1)
+                                                          ),
+                                                          child: Text(
+                                                            "Please confirm if you want to remove the account?",
+                                                            textAlign: TextAlign.center,
+                                                            softWrap: true,
+                                                          ),
+                                                        ),
+                                                        const SizedBox(
+                                                          height: 80,
+                                                        ),
+                                                        Row(
+                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                          children: [
+                                                            SizedBox(
+                                                              height: 46,
+                                                              child: TextButton(
+                                                                  style: ButtonStyle(
+                                                                      padding: const MaterialStatePropertyAll<EdgeInsetsGeometry>(
+                                                                          EdgeInsets.symmetric(
+                                                                              horizontal: 40
+                                                                          )
+                                                                      ),
+                                                                      shape: MaterialStatePropertyAll(
+                                                                          RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(25)
+                                                                          )
+                                                                      )
+                                                                  ),
+                                                                  onPressed: (){
+                                                                    Navigator.pop(context);
+                                                                  },
+                                                                  child: const Text(
+                                                                    "Cancel",
+                                                                    style: TextStyle(
+                                                                        fontSize: 14,
+                                                                        fontFamily: "Montserrat",
+                                                                        fontWeight: FontWeight.w600
+                                                                    ),
+                                                                  )
+                                                              ),
+                                                            ),
+                                                            SizedBox(
+                                                              height: 46,
+                                                              child: ElevatedButton(
+                                                                  style: ButtonStyle(
+                                                                      padding: const MaterialStatePropertyAll<EdgeInsetsGeometry>(
+                                                                          EdgeInsets.symmetric(
+                                                                              horizontal: 40
+                                                                          )
+                                                                      ),
+                                                                      backgroundColor: const MaterialStatePropertyAll<Color>(
+                                                                          Color.fromRGBO(185, 26, 129, 1)
+                                                                      ),
+                                                                      shape: MaterialStatePropertyAll(
+                                                                          RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.circular(25)
+                                                                          )
+                                                                      )
+                                                                  ),
+                                                                  onPressed: (){
+                                                                    Navigator.pop(context);
+                                                                  },
+                                                                  child: const Text(
+                                                                    "Confirm",
+                                                                    style: TextStyle(
+                                                                        fontSize: 14,
+                                                                        color: Colors.white,
+                                                                        fontFamily: "Montserrat"
+                                                                    ),
+                                                                  )
+                                                              ),
+                                                            )
+                                                          ],
+                                                        )
+
+                                                      ],
+                                                    ),
+                                                  ),
+                                                );
+                                              });
+                                            });
+                                          },
+                                          child: Container(
+                                            width: MediaQuery.of(context).size.width,
+                                            padding: const EdgeInsets.only(
+                                                bottom: 30
+                                            ),
+                                            decoration: const BoxDecoration(
+                                                border: Border(
+                                                    bottom: BorderSide(width: 1.5, color: Colors.black12)
+                                                )
+                                            ),
+                                            child: const Text("Remove Account", style: TextStyle(
+                                                fontSize: 18,
+                                                fontFamily: "Montserrat",
+                                                fontWeight: FontWeight.w600
+                                            ),),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            );
+                          }
+                      );
                     },
                     icon: const Icon(
                       Icons.more_vert,

@@ -1,7 +1,9 @@
 import 'package:ebixcash/screens/getStarted/GetStartedScreen.dart';
 import 'package:ebixcash/screens/login/LoginScreen.dart';
 import 'package:ebixcash/screens/pages/dashboard/dashboard.dart';
+import 'package:ebixcash/screens/pages/drawer/addBeneficiary/addBeneficiary.dart';
 import 'package:ebixcash/screens/pages/drawer/bankAccount/bankAccount.dart';
+import 'package:ebixcash/screens/pages/drawer/complaintStatus/complaintStatus.dart';
 import 'package:ebixcash/screens/pages/drawer/createUpi/createUpi.dart';
 import 'package:ebixcash/screens/pages/drawer/createUpi/createYourOwnUpi/createYourOwnUpi.dart';
 import 'package:ebixcash/screens/pages/drawer/helpSupport/help_support.dart';
@@ -68,6 +70,8 @@ class _MyAppState extends State<MyApp> {
         '/physicalCard' : (context) => const PhysicalCard(),
         '/ebixcashCardWithBalance' : (context) => const EbixcashCardWithBalanceScreen(),
         '/bankAccounts' : (context) => const BankAccountScreen(),
+        '/complaintStatus' : (context) => const ComplaintStatusScreen(),
+        '/addBeneficiary' : (context) => const AddBeneficiaryScreen(),
       },
 
 
