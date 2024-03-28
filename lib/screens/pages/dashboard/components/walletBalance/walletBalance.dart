@@ -39,7 +39,7 @@ class _WalletBalanceState extends State<WalletBalance> {
               title: "Add Money",
               icon: "+",
               btnFunc: (){
-
+                Navigator.pushNamed(context, "/addMoney");
               },
             )
           ],

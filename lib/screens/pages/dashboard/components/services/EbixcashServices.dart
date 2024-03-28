@@ -28,7 +28,7 @@ class EbixCashServices extends StatelessWidget {
             icon: "assets/images/send_money.png",
             title: "Send Money",
             btnFunc: (){
-              print("sendMoney");
+              Navigator.pushNamed(context, '/sendMoney');
             },
           ),
           PurpleGradientIcon(
