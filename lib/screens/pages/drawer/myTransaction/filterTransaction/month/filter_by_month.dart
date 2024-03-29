@@ -138,7 +138,7 @@ class _FilterByMonthState extends State<FilterByMonth> {
                       return CheckboxListTile(
                           contentPadding: EdgeInsets.zero,
                           checkColor: const Color.fromRGBO(48, 183, 231, 1),
-                          fillColor: MaterialStatePropertyAll<Color>(Colors.white),
+                          fillColor: const MaterialStatePropertyAll<Color>(Colors.white),
 
                           side: monthList[index]["value"] ? const BorderSide(
                             color: Color.fromRGBO(48, 183, 231, 1),

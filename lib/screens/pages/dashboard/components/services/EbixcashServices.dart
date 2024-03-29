@@ -35,14 +35,14 @@ class EbixCashServices extends StatelessWidget {
             icon: "assets/images/recharge_bill_pay.png",
             title: "Recharge & Bill Pay",
             btnFunc: (){
-              print("recharge_bill_pay");
+              Navigator.pushNamed(context, "/rechargeAndBillPayment");
             },
           ),
           PurpleGradientIcon(
             icon: "assets/images/forex.png",
             title: "Forex",
             btnFunc: (){
-              print("forex");
+              Navigator.pushNamed(context, '/forexStore');
             },
           ),
           PurpleGradientIcon(

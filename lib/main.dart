@@ -2,6 +2,10 @@ import 'package:ebixcash/screens/getStarted/GetStartedScreen.dart';
 import 'package:ebixcash/screens/login/LoginScreen.dart';
 import 'package:ebixcash/screens/pages/dashboard/addMoney/addMoney.dart';
 import 'package:ebixcash/screens/pages/dashboard/dashboard.dart';
+import 'package:ebixcash/screens/pages/dashboard/forex/buyForex/buyForex.dart';
+import 'package:ebixcash/screens/pages/dashboard/forex/forexStore.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/prepaidMobileRecharge/prepaidMobileRecharge.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/rechargeAndBillPayment.dart';
 import 'package:ebixcash/screens/pages/dashboard/sendMoney/sendMoney.dart';
 import 'package:ebixcash/screens/pages/drawer/addBeneficiary/addBeneficiary.dart';
 import 'package:ebixcash/screens/pages/drawer/bankAccount/bankAccount.dart';
@@ -76,6 +80,10 @@ class _MyAppState extends State<MyApp> {
         '/addBeneficiary' : (context) => const AddBeneficiaryScreen(),
         '/addMoney' : (context) => const AddMoneyScreen(),
         '/sendMoney' : (context) => const SendMoneyScreen(),
+        '/rechargeAndBillPayment' : (context) => const RechargeAndBillPaymentScreen(),
+        '/prepaidMobileRecharge' : (context) => const PrepaidMobileRechargeScreen(),
+        '/forexStore' : (context) => const ForexStoreScreen(),
+        '/buyForex' : (context) => const BuyForexScreen(),
       },
 
 
