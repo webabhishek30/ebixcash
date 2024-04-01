@@ -148,6 +148,9 @@ class _SelectDthPlanScreenState extends State<SelectDthPlanScreen> {
                               ),)
                           ),
                         ),
+                        const SizedBox(
+                          width: 10,
+                        ),
                         Container(
                           height: 30,
                           padding: const EdgeInsets.all(1),
@@ -182,6 +185,9 @@ class _SelectDthPlanScreenState extends State<SelectDthPlanScreen> {
                                   color: Color.fromRGBO(185, 26, 129, 1)
                               ),)
                           ),
+                        ),
+                        const SizedBox(
+                          width: 10,
                         ),
                         Container(
                           height: 30,
