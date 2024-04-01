@@ -1,14 +1,13 @@
-import 'package:ebixcash/screens/pages/dashboard/forex/checkout/checkout.dart';
 import 'package:flutter/material.dart';
 
-class BuyForexScreen extends StatefulWidget {
-  const BuyForexScreen({super.key});
+class TransferMoneyScreen extends StatefulWidget {
+  const TransferMoneyScreen({super.key});
 
   @override
-  State<BuyForexScreen> createState() => _BuyForexScreenState();
+  State<TransferMoneyScreen> createState() => _TransferMoneyScreenState();
 }
 
-class _BuyForexScreenState extends State<BuyForexScreen> {
+class _TransferMoneyScreenState extends State<TransferMoneyScreen> {
 
   String productValue = 'Select Product';
   var productItems = [
@@ -75,7 +74,7 @@ class _BuyForexScreenState extends State<BuyForexScreen> {
               color: Colors.black,
             )
         ),
-        title: const Text("Buy Forex", style: TextStyle(
+        title: const Text("Transfer Money", style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
             fontFamily: "Montserrat",
@@ -97,14 +96,14 @@ class _BuyForexScreenState extends State<BuyForexScreen> {
                       width: 16,
                       height: 16,
                       decoration: BoxDecoration(
-                        color: const Color.fromRGBO(192, 38, 138, 1),
-                        borderRadius: BorderRadius.circular(8)
+                          color: const Color.fromRGBO(192, 38, 138, 1),
+                          borderRadius: BorderRadius.circular(8)
                       ),
                       child: const Center(
                           child: Text("0", style: TextStyle(
-                            fontSize: 10,
-                            fontFamily: "Montserrat",
-                            color: Colors.white
+                              fontSize: 10,
+                              fontFamily: "Montserrat",
+                              color: Colors.white
                           ),)
                       ),
                     )
@@ -127,10 +126,10 @@ class _BuyForexScreenState extends State<BuyForexScreen> {
                 height: 50,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  border: Border.all(
-                    color: const Color.fromRGBO(225, 225, 225, 1)
-                  )
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(
+                        color: const Color.fromRGBO(225, 225, 225, 1)
+                    )
                 ),
                 child: DropdownButton(
                   padding: const EdgeInsets.all(10),
@@ -138,9 +137,9 @@ class _BuyForexScreenState extends State<BuyForexScreen> {
                   underline: const SizedBox(),
                   value: productValue,
                   style: const TextStyle(
-                    fontFamily: "Montserrat",
-                    fontSize: 14,
-                    color: Color.fromRGBO(120, 120, 120, 1)
+                      fontFamily: "Montserrat",
+                      fontSize: 14,
+                      color: Color.fromRGBO(120, 120, 120, 1)
                   ),
                   icon: Image.asset("assets/images/dropdownArrow.png"),
                   items: productItems.map((String items) {
@@ -208,42 +207,6 @@ class _BuyForexScreenState extends State<BuyForexScreen> {
                   padding: const EdgeInsets.all(10),
                   isExpanded: true,
                   underline: const SizedBox(),
-                  value: relationValue,
-                  style: const TextStyle(
-                      fontFamily: "Montserrat",
-                      fontSize: 14,
-                      color: Color.fromRGBO(120, 120, 120, 1)
-                  ),
-                  icon: Image.asset("assets/images/dropdownArrow.png"),
-                  items: relationItem.map((String items) {
-                    return DropdownMenuItem(
-                      value: items,
-                      child: Text(items),
-                    );
-                  }).toList(),
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      relationValue = newValue!;
-                    });
-                  },
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Container(
-                height: 50,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    border: Border.all(
-                        color: const Color.fromRGBO(225, 225, 225, 1)
-                    )
-                ),
-                child: DropdownButton(
-                  padding: const EdgeInsets.all(10),
-                  isExpanded: true,
-                  underline: const SizedBox(),
                   value: currencyValue,
                   style: const TextStyle(
                       fontFamily: "Montserrat",
@@ -271,18 +234,18 @@ class _BuyForexScreenState extends State<BuyForexScreen> {
                 height: 50,
                 child: TextFormField(
                   decoration: InputDecoration(
-                    hintText: "Forex Amount",
-                    hintStyle: const TextStyle(
-                      fontFamily: "Montserrat",
-                      fontSize: 14,
-                      color: Color.fromRGBO(120, 120, 120, 1)
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5),
-                      borderSide: const BorderSide(
-                          color: Color.fromRGBO(225, 225, 225, 1)
+                      hintText: "Forex Amount",
+                      hintStyle: const TextStyle(
+                          fontFamily: "Montserrat",
+                          fontSize: 14,
+                          color: Color.fromRGBO(120, 120, 120, 1)
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5),
+                          borderSide: const BorderSide(
+                              color: Color.fromRGBO(225, 225, 225, 1)
+                          )
                       )
-                    )
                   ),
                 ),
               ),
@@ -313,31 +276,31 @@ class _BuyForexScreenState extends State<BuyForexScreen> {
         ),
       ),
       bottomNavigationBar: SizedBox(
-          height: 65,
-          child: ElevatedButton(
-              style: const ButtonStyle(
-                  shape: MaterialStatePropertyAll(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.zero
-                      )
-                  ),
-                  backgroundColor: MaterialStatePropertyAll(
-                      Color.fromRGBO(185, 26, 129, 1)
-                  )
-              ),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const CheckoutScreen()));
-              },
-              child: Text(
-                "Add to cart".toUpperCase(),
-                style: const TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 16,
-                    fontFamily: "Montserrat"
+        height: 65,
+        child: ElevatedButton(
+            style: const ButtonStyle(
+                shape: MaterialStatePropertyAll(
+                    RoundedRectangleBorder(
+                        borderRadius: BorderRadius.zero
+                    )
                 ),
-              )
-          ),
+                backgroundColor: MaterialStatePropertyAll(
+                    Color.fromRGBO(185, 26, 129, 1)
+                )
+            ),
+            onPressed: (){
+
+            },
+            child: Text(
+              "Add to cart".toUpperCase(),
+              style: const TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16,
+                  fontFamily: "Montserrat"
+              ),
+            )
         ),
+      ),
     );
   }
 }

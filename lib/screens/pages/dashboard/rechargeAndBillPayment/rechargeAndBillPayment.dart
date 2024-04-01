@@ -202,7 +202,7 @@ class _RechargeAndBillPaymentScreenState extends State<RechargeAndBillPaymentScr
                       icon: "assets/images/dth_recharge.png",
                       title: "DTH Recharge",
                       btnFunc: (){
-                        print("forex");
+                        Navigator.pushNamed(context, "/dthRecharge");
                       },
                     ),
                     PurpleGradientIcon(

@@ -137,21 +137,21 @@ class _ForexStoreScreenState extends State<ForexStoreScreen> with TickerProvider
                       icon: "assets/images/buy_forex.png",
                       title: "Sell Forex",
                       btnFunc: (){
-                        print("Sell Forex");
+                        Navigator.pushNamed(context, "/sellForex");
                       },
                     ),
                     PurpleGradientIcon(
                       icon: "assets/images/money_transfer.png",
                       title: "Transfer Money",
                       btnFunc: (){
-                        print("Transfer Money");
+                        Navigator.pushNamed(context, "/transferMoney");
                       },
                     ),
                     PurpleGradientIcon(
                       icon: "assets/images/reload_card.png",
                       title: "Reload Card",
                       btnFunc: (){
-                        print("Reload Card");
+                        Navigator.pushNamed(context, "/reloadCard");
                       },
                     )
                   ],

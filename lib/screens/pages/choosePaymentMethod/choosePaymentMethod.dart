@@ -61,6 +61,16 @@ class _ChoosePaymentMethodScreenState extends State<ChoosePaymentMethodScreen> {
 
   @override
   Widget build(BuildContext context) {
+    String amount = "";
+    switch(widget.title){
+      case "Mobile Recharge" :
+        amount = widget.paymentFor["packageAmount"];
+        break;
+      case "Buy Forex" :
+        amount = widget.paymentFor["amount"];
+        break;
+    }
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -110,7 +120,7 @@ class _ChoosePaymentMethodScreenState extends State<ChoosePaymentMethodScreen> {
                     ),),
                     subtitle: Padding(
                       padding: const EdgeInsets.only(top: 5.0),
-                      child: Text("₹ ${widget.paymentFor["packageAmount"]}", style: const TextStyle(
+                      child: Text("₹ $amount", style: const TextStyle(
                           fontFamily: "Montserrat",
                           fontSize: 20,
                           fontWeight: FontWeight.w700,
@@ -341,7 +351,7 @@ class _ChoosePaymentMethodScreenState extends State<ChoosePaymentMethodScreen> {
               });
             },
             child: Text(
-              "Pay ₹${widget.paymentFor["packageAmount"]}".toUpperCase(),
+              "Pay ₹ $amount".toUpperCase(),
               style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 16,
