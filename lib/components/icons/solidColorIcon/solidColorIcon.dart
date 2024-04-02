@@ -33,7 +33,7 @@ class SolidColorIcon extends StatelessWidget {
             Text(
               title,
               textAlign: TextAlign.center,
-
+              softWrap: true,
               maxLines: 2,
               style: const TextStyle(
                 color: Color.fromRGBO(112, 112, 112, 1),

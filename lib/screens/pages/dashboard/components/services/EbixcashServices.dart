@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../components/icons/gradientIcon/purpleGradientIcon.dart';
 
 class EbixCashServices extends StatelessWidget {
+
   const EbixCashServices({super.key});
 
   @override
@@ -27,21 +28,21 @@ class EbixCashServices extends StatelessWidget {
             icon: "assets/images/send_money.png",
             title: "Send Money",
             btnFunc: (){
-              print("sendMoney");
+              Navigator.pushNamed(context, '/sendMoney');
             },
           ),
           PurpleGradientIcon(
             icon: "assets/images/recharge_bill_pay.png",
             title: "Recharge & Bill Pay",
             btnFunc: (){
-              print("recharge_bill_pay");
+              Navigator.pushNamed(context, "/rechargeAndBillPayment");
             },
           ),
           PurpleGradientIcon(
             icon: "assets/images/forex.png",
             title: "Forex",
             btnFunc: (){
-              print("forex");
+              Navigator.pushNamed(context, '/forexStore');
             },
           ),
           PurpleGradientIcon(

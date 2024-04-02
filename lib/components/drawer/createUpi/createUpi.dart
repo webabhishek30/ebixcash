@@ -12,8 +12,7 @@ class _CreateUpiState extends State<CreateUpi> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        // TODO
-        print("Create Upi");
+        Navigator.pushNamed(context, "/createUpi");
       },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),

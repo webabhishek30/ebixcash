@@ -55,7 +55,7 @@ class TravelOfferCard extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            RichText(
+            offerCode.isEmpty ? const SizedBox() : RichText(
                 text: TextSpan(
                     style: const TextStyle(
                         fontSize: 14,

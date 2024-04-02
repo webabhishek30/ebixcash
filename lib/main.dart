@@ -1,12 +1,30 @@
 import 'package:ebixcash/screens/getStarted/GetStartedScreen.dart';
 import 'package:ebixcash/screens/login/LoginScreen.dart';
+import 'package:ebixcash/screens/pages/dashboard/addMoney/addMoney.dart';
 import 'package:ebixcash/screens/pages/dashboard/dashboard.dart';
+import 'package:ebixcash/screens/pages/dashboard/forex/buyForex/buyForex.dart';
+import 'package:ebixcash/screens/pages/dashboard/forex/forexStore.dart';
+import 'package:ebixcash/screens/pages/dashboard/forex/reloadCard/reloadCard.dart';
+import 'package:ebixcash/screens/pages/dashboard/forex/sellForex/sellForex.dart';
+import 'package:ebixcash/screens/pages/dashboard/forex/transferMoney/transferMoney.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/dthRecharge/dthRecharge.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/prepaidMobileRecharge/prepaidMobileRecharge.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/rechargeAndBillPayment.dart';
+import 'package:ebixcash/screens/pages/dashboard/sendMoney/sendMoney.dart';
+import 'package:ebixcash/screens/pages/drawer/addBeneficiary/addBeneficiary.dart';
+import 'package:ebixcash/screens/pages/drawer/bankAccount/bankAccount.dart';
+import 'package:ebixcash/screens/pages/drawer/complaintStatus/complaintStatus.dart';
+import 'package:ebixcash/screens/pages/drawer/createUpi/createUpi.dart';
+import 'package:ebixcash/screens/pages/drawer/createUpi/createYourOwnUpi/createYourOwnUpi.dart';
 import 'package:ebixcash/screens/pages/drawer/helpSupport/help_support.dart';
 import 'package:ebixcash/screens/pages/drawer/helpSupport/moreQueries/contactUs/contact_us.dart';
 import 'package:ebixcash/screens/pages/drawer/myTransaction/my_transaction.dart';
 import 'package:ebixcash/screens/pages/drawer/profile/profile.dart';
 import 'package:ebixcash/screens/pages/drawer/rateUs/rate_us.dart';
 import 'package:ebixcash/screens/pages/drawer/savedCards/saved_cards.dart';
+import 'package:ebixcash/screens/pages/ebixcashCard/ebixcashCard.dart';
+import 'package:ebixcash/screens/pages/ebixcashCard/ebixcashCardWithBalance/ebixcashCardWithBalance.dart';
+import 'package:ebixcash/screens/pages/ebixcashCard/physicalCard/physicalCard.dart';
 import 'package:ebixcash/screens/pages/notifications/notifications.dart';
 import 'package:ebixcash/screens/register/RegisterScreen.dart';
 import 'package:ebixcash/screens/verifyOtp/verifyOtp.dart';
@@ -56,7 +74,24 @@ class _MyAppState extends State<MyApp> {
         '/contactus' : (context) => const ContactUs(),
         '/notifications' : (context) => const Notifications(),
         '/profile' : (context) => const Profile(),
-
+        '/createUpi' : (context) => const CreateUpiScreen(),
+        '/createYourOwnUpi' : (context) => const CreateYourOwnUpi(),
+        '/ebixcashCard' : (context) => const EbixcashCard(),
+        '/physicalCard' : (context) => const PhysicalCard(),
+        '/ebixcashCardWithBalance' : (context) => const EbixcashCardWithBalanceScreen(),
+        '/bankAccounts' : (context) => const BankAccountScreen(),
+        '/complaintStatus' : (context) => const ComplaintStatusScreen(),
+        '/addBeneficiary' : (context) => const AddBeneficiaryScreen(),
+        '/addMoney' : (context) => const AddMoneyScreen(),
+        '/sendMoney' : (context) => const SendMoneyScreen(),
+        '/rechargeAndBillPayment' : (context) => const RechargeAndBillPaymentScreen(),
+        '/prepaidMobileRecharge' : (context) => const PrepaidMobileRechargeScreen(),
+        '/forexStore' : (context) => const ForexStoreScreen(),
+        '/buyForex' : (context) => const BuyForexScreen(),
+        '/sellForex' : (context) => const SellForexScreen(),
+        '/transferMoney' : (context) => const TransferMoneyScreen(),
+        '/reloadCard' : (context) => const ReloadCardScreen(),
+        '/dthRecharge' : (context) => const DthRechargeScreen(),
       },
 
 
