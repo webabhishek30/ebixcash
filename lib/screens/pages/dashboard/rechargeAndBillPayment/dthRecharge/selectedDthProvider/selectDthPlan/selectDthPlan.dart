@@ -1,3 +1,4 @@
+import 'package:ebixcash/screens/pages/choosePaymentMethod/choosePaymentMethod.dart';
 import 'package:flutter/material.dart';
 
 class SelectDthPlanScreen extends StatefulWidget {
@@ -12,6 +13,13 @@ class SelectDthPlanScreen extends StatefulWidget {
 }
 
 class _SelectDthPlanScreenState extends State<SelectDthPlanScreen> {
+
+  List recommendedPlan = [
+    "300", "500", "750",
+  ];
+
+  final TextEditingController amountController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +74,7 @@ class _SelectDthPlanScreenState extends State<SelectDthPlanScreen> {
                     leading: SizedBox(
                       width: 50,
                       height: 50,
-                      child: Image.asset("assets/images/tata_play.png"),
+                      child: Image.asset(widget.selectedDthProvider["dthProviderLogo"]),
                     ),
                     title: Text(widget.selectedDthProvider["dthProviderName"], style: const TextStyle(
                         fontFamily: "Montserrat",
@@ -82,6 +90,7 @@ class _SelectDthPlanScreenState extends State<SelectDthPlanScreen> {
                     height: 10,
                   ),
                   TextFormField(
+                    controller: amountController,
                     decoration: InputDecoration(
                         prefixIcon: const Icon(
                           Icons.currency_rupee,
@@ -111,121 +120,56 @@ class _SelectDthPlanScreenState extends State<SelectDthPlanScreen> {
                     height: 10,
                   ),
                   SizedBox(
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 30,
-                          padding: const EdgeInsets.all(1),
-                          decoration: BoxDecoration(
-                              gradient: const LinearGradient(colors: [
-                                Color.fromRGBO(102, 84, 159, 1),
-                                Color.fromRGBO(189, 34, 135, 1),
-                              ]
-                              ),
-                              borderRadius: BorderRadius.circular(25)
-                          ),
-                          child: ElevatedButton(
+                    height: 30,
+                    child: ListView.separated(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (BuildContext context, int index){
+                          return Container(
+                            height: 30,
+                            padding: const EdgeInsets.all(1),
+                            decoration: BoxDecoration(
+                                gradient: const LinearGradient(colors: [
+                                  Color.fromRGBO(102, 84, 159, 1),
+                                  Color.fromRGBO(189, 34, 135, 1),
+                                ]
+                                ),
+                                borderRadius: BorderRadius.circular(25)
+                            ),
+                            child: ElevatedButton(
 
-                              onPressed: (){
+                                onPressed: (){
+                                  setState(() {
+                                    amountController.text = recommendedPlan[index];
+                                  });
+                                },
+                                style: ButtonStyle(
+                                    elevation: const MaterialStatePropertyAll(0),
 
-                              },
-                              style: ButtonStyle(
-                                  elevation: const MaterialStatePropertyAll(0),
-
-                                  backgroundColor: const MaterialStatePropertyAll(
-                                      Colors.white
-                                  ),
-                                  shape: MaterialStatePropertyAll(
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(25),
-                                      )
-                                  )
-                              ),
-                              child: const Text("₹ 300", style: TextStyle(
-                                  fontSize: 13,
-                                  fontFamily: "Montserrat",
-                                  color: Color.fromRGBO(185, 26, 129, 1)
-                              ),)
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 30,
-                          padding: const EdgeInsets.all(1),
-                          decoration: BoxDecoration(
-                              gradient: const LinearGradient(colors: [
-                                Color.fromRGBO(102, 84, 159, 1),
-                                Color.fromRGBO(189, 34, 135, 1),
-                              ]
-                              ),
-                              borderRadius: BorderRadius.circular(25)
-                          ),
-                          child: ElevatedButton(
-
-                              onPressed: (){
-
-                              },
-                              style: ButtonStyle(
-                                  elevation: const MaterialStatePropertyAll(0),
-
-                                  backgroundColor: const MaterialStatePropertyAll(
-                                      Colors.white
-                                  ),
-                                  shape: MaterialStatePropertyAll(
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(25),
-                                      )
-                                  )
-                              ),
-                              child: const Text("₹ 500", style: TextStyle(
-                                  fontSize: 13,
-                                  fontFamily: "Montserrat",
-                                  color: Color.fromRGBO(185, 26, 129, 1)
-                              ),)
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          height: 30,
-                          padding: const EdgeInsets.all(1),
-                          decoration: BoxDecoration(
-                              gradient: const LinearGradient(colors: [
-                                Color.fromRGBO(102, 84, 159, 1),
-                                Color.fromRGBO(189, 34, 135, 1),
-                              ]
-                              ),
-                              borderRadius: BorderRadius.circular(25)
-                          ),
-                          child: ElevatedButton(
-
-                              onPressed: (){
-
-                              },
-                              style: ButtonStyle(
-                                  elevation: const MaterialStatePropertyAll(0),
-
-                                  backgroundColor: const MaterialStatePropertyAll(
-                                      Colors.white
-                                  ),
-                                  shape: MaterialStatePropertyAll(
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(25),
-                                      )
-                                  )
-                              ),
-                              child: const Text("₹ 750", style: TextStyle(
-                                  fontSize: 13,
-                                  fontFamily: "Montserrat",
-                                  color: Color.fromRGBO(185, 26, 129, 1)
-                              ),)
-                          ),
-                        ),
-                      ],
-                    )
+                                    backgroundColor: const MaterialStatePropertyAll(
+                                        Colors.white
+                                    ),
+                                    shape: MaterialStatePropertyAll(
+                                        RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(25),
+                                        )
+                                    )
+                                ),
+                                child: Text("₹ ${recommendedPlan[index]}", style: const TextStyle(
+                                    fontSize: 13,
+                                    fontFamily: "Montserrat",
+                                    color: Color.fromRGBO(185, 26, 129, 1)
+                                ),)
+                            ),
+                          );
+                        },
+                        separatorBuilder: (BuildContext context, int index){
+                          return const SizedBox(
+                            width: 10,
+                          );
+                        },
+                        itemCount: recommendedPlan.length
+                    ),
                   )
                   ]
                 ),
@@ -247,9 +191,9 @@ class _SelectDthPlanScreenState extends State<SelectDthPlanScreen> {
                 )
             ),
             onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => SelectDthPlanScreen(
-                selectedDthProvider: widget.selectedDthProvider,
-                subscriberNumber: widget.subscriberNumber,
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ChoosePaymentMethodScreen(
+                  title: 'DTH Recharge',
+                  amount: amountController.text
               )));
             },
             child: Text(
@@ -257,7 +201,8 @@ class _SelectDthPlanScreenState extends State<SelectDthPlanScreen> {
               style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 16,
-                  fontFamily: "Montserrat"
+                  fontFamily: "Montserrat",
+                  color: Colors.white
               ),
             )
         ),

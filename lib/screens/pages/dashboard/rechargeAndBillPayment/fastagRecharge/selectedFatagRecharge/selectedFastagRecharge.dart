@@ -1,19 +1,21 @@
-import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/dthRecharge/selectedDthProvider/selectDthPlan/selectDthPlan.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/fastagRecharge/selectedFatagRecharge/selectFastagPlan/selectFastagPlan.dart';
 import 'package:flutter/material.dart';
 
-class SelectedDthProviderScreen extends StatefulWidget {
+import '../../dthRecharge/selectedDthProvider/selectDthPlan/selectDthPlan.dart';
 
-  Map<String, dynamic> selectedDthProvider;
+class SelectedFastagProviderScreen extends StatefulWidget {
 
-  SelectedDthProviderScreen({required this.selectedDthProvider, super.key});
+  Map<String, dynamic> selectedFastagProvider;
+
+  SelectedFastagProviderScreen({required this.selectedFastagProvider, super.key});
 
   @override
-  State<SelectedDthProviderScreen> createState() => _SelectedDthProviderScreenState();
+  State<SelectedFastagProviderScreen> createState() => _SelectedFastagProviderScreenState();
 }
 
-class _SelectedDthProviderScreenState extends State<SelectedDthProviderScreen> {
+class _SelectedFastagProviderScreenState extends State<SelectedFastagProviderScreen> {
 
-  final TextEditingController subscriberController = TextEditingController();
+  final TextEditingController vehicleNumberController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class _SelectedDthProviderScreenState extends State<SelectedDthProviderScreen> {
               color: Colors.black,
             )
         ),
-        title: Text(widget.selectedDthProvider["dthProviderName"], style: const TextStyle(
+        title: Text(widget.selectedFastagProvider["fastagProviderName"], style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
             fontFamily: "Montserrat",
@@ -51,13 +53,9 @@ class _SelectedDthProviderScreenState extends State<SelectedDthProviderScreen> {
         child: Container(
           padding: const EdgeInsets.all(20),
           child: TextFormField(
-            controller: subscriberController,
+            controller: vehicleNumberController,
             decoration: InputDecoration(
-                suffixIcon: const Icon(
-                  Icons.contacts,
-                  color: Color.fromRGBO(197, 197, 197, 1),
-                ),
-                hintText: "Subscriber Number",
+                hintText: "vehicle registered number",
                 hintStyle: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
@@ -85,9 +83,9 @@ class _SelectedDthProviderScreenState extends State<SelectedDthProviderScreen> {
                 )
             ),
             onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => SelectDthPlanScreen(
-                  selectedDthProvider: widget.selectedDthProvider,
-                  subscriberNumber: subscriberController.text,
+              Navigator.push(context, MaterialPageRoute(builder: (context) => SelectFastagPlanScreen(
+                selectedFastagProvider: widget.selectedFastagProvider,
+                vehicleNumber: vehicleNumberController.text,
               )));
             },
             child: Text(

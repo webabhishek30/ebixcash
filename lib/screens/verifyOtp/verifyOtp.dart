@@ -1,7 +1,6 @@
 import 'package:ebixcash/components/buttons/purpleButtonComponent.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:otp_autofill/otp_autofill.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_field_style.dart';
 import 'package:otp_text_field/style.dart';

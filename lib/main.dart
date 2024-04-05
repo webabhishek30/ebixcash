@@ -8,8 +8,10 @@ import 'package:ebixcash/screens/pages/dashboard/forex/reloadCard/reloadCard.dar
 import 'package:ebixcash/screens/pages/dashboard/forex/sellForex/sellForex.dart';
 import 'package:ebixcash/screens/pages/dashboard/forex/transferMoney/transferMoney.dart';
 import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/dthRecharge/dthRecharge.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/fastagRecharge/fastagRecharge.dart';
 import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/prepaidMobileRecharge/prepaidMobileRecharge.dart';
 import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/rechargeAndBillPayment.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/waterBill/waterBill.dart';
 import 'package:ebixcash/screens/pages/dashboard/sendMoney/sendMoney.dart';
 import 'package:ebixcash/screens/pages/drawer/addBeneficiary/addBeneficiary.dart';
 import 'package:ebixcash/screens/pages/drawer/bankAccount/bankAccount.dart';
@@ -92,6 +94,8 @@ class _MyAppState extends State<MyApp> {
         '/transferMoney' : (context) => const TransferMoneyScreen(),
         '/reloadCard' : (context) => const ReloadCardScreen(),
         '/dthRecharge' : (context) => const DthRechargeScreen(),
+        '/fastagRecharge' : (context) => const FastagRechargeScreen(),
+        '/waterBill' : (context) => const WaterBillScreen(),
       },
 
 

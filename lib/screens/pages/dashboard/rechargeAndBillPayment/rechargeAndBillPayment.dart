@@ -21,7 +21,7 @@ class _RechargeAndBillPaymentScreenState extends State<RechargeAndBillPaymentScr
     {
       "title" : "Water",
       "icon" : "assets/images/water.png",
-      "pageName" : ""
+      "pageName" : "/waterBill"
     },
     {
       "title" : "Piped Gas",
@@ -209,7 +209,7 @@ class _RechargeAndBillPaymentScreenState extends State<RechargeAndBillPaymentScr
                       icon: "assets/images/fastag_recharge.png",
                       title: "FASTag Recharge",
                       btnFunc: (){
-                        print("prepaid card");
+                        Navigator.pushNamed(context, "/fastagRecharge");
                       },
                     )
                   ],
@@ -249,7 +249,7 @@ class _RechargeAndBillPaymentScreenState extends State<RechargeAndBillPaymentScr
                       icon: utilitiesBillPayments[index]["icon"],
                       title: utilitiesBillPayments[index]["title"],
                       btnFunc: (){
-                        print(utilitiesBillPayments[index]["title"]);
+                        Navigator.pushNamed(context, utilitiesBillPayments[index]["pageName"]);
                       }
                   );
                 }),

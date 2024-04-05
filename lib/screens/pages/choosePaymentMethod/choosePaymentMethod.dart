@@ -9,10 +9,11 @@ import '../dashboard/addMoney/addMoneyToWallet/successfulTransaction/successfulT
 
 class ChoosePaymentMethodScreen extends StatefulWidget {
 
-  Map<String, dynamic> paymentFor;
+  Map<String, dynamic>? paymentFor;
   String title;
+  String? amount;
 
-  ChoosePaymentMethodScreen({required this.title, required this.paymentFor, super.key});
+  ChoosePaymentMethodScreen({required this.title, this.paymentFor, this.amount, super.key});
 
   @override
   State<ChoosePaymentMethodScreen> createState() => _ChoosePaymentMethodScreenState();
@@ -64,10 +65,16 @@ class _ChoosePaymentMethodScreenState extends State<ChoosePaymentMethodScreen> {
     String amount = "";
     switch(widget.title){
       case "Mobile Recharge" :
-        amount = widget.paymentFor["packageAmount"];
+        amount = widget.paymentFor!["packageAmount"];
         break;
       case "Buy Forex" :
-        amount = widget.paymentFor["amount"];
+        amount = widget.paymentFor!["amount"];
+        break;
+      case "DTH Recharge" :
+        amount = widget.amount!;
+        break;
+      case "Fastag Recharge" :
+        amount = widget.amount!;
         break;
     }
 
@@ -181,7 +188,6 @@ class _ChoosePaymentMethodScreenState extends State<ChoosePaymentMethodScreen> {
                           child: Image.asset(debitFrom[index]["debitTypeIcon"]),
                         ),
                         trailing: Image.asset(debitFrom[index]["debitTypeLogo"], width: 80,),
-                        horizontalTitleGap: 0,
 
                         title: Text(debitFrom[index]["debitType"], style: const TextStyle(
                             fontSize: 16,
@@ -355,7 +361,8 @@ class _ChoosePaymentMethodScreenState extends State<ChoosePaymentMethodScreen> {
               style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 16,
-                  fontFamily: "Montserrat"
+                  fontFamily: "Montserrat",
+                  color: Colors.white
               ),
             )
         ),

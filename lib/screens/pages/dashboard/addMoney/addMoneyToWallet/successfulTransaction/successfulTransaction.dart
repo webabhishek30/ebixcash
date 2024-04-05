@@ -74,7 +74,8 @@ class _SuccessfulTransactionScreenState extends State<SuccessfulTransactionScree
                   },
                   child: const Text("View Transaction Details", style: TextStyle(
                     fontSize: 14,
-                    fontFamily: "Montserrat"
+                    fontFamily: "Montserrat",
+                    color: Colors.white
                   ),)
               ),
             ),
