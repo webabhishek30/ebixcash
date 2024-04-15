@@ -7,8 +7,14 @@ import 'package:ebixcash/screens/pages/dashboard/forex/forexStore.dart';
 import 'package:ebixcash/screens/pages/dashboard/forex/reloadCard/reloadCard.dart';
 import 'package:ebixcash/screens/pages/dashboard/forex/sellForex/sellForex.dart';
 import 'package:ebixcash/screens/pages/dashboard/forex/transferMoney/transferMoney.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/broadband/broadband.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/cableTv/cableTv.dart';
 import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/dthRecharge/dthRecharge.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/electricityRecharge/electricityRecharge.dart';
 import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/fastagRecharge/fastagRecharge.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/landline/landline.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/lpg/lpg.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/pipedGas/pipedGas.dart';
 import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/prepaidMobileRecharge/prepaidMobileRecharge.dart';
 import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/rechargeAndBillPayment.dart';
 import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/waterBill/waterBill.dart';
@@ -96,6 +102,12 @@ class _MyAppState extends State<MyApp> {
         '/dthRecharge' : (context) => const DthRechargeScreen(),
         '/fastagRecharge' : (context) => const FastagRechargeScreen(),
         '/waterBill' : (context) => const WaterBillScreen(),
+        '/electricityBill' : (context) => const ElectricityRechargeScreen(),
+        '/pipedGas' : (context) => const PipedGasScreen(),
+        '/broadBand' : (context) => const BroadBandScreen(),
+        '/cableTv' : (context) => const CableTvScreen(),
+        '/lpg' : (context) => const LpgScreen(),
+        '/landline' : (context) => const LandlineScreen(),
       },
 
 

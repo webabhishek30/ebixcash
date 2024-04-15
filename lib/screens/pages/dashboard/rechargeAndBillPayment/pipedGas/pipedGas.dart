@@ -1,41 +1,38 @@
-import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/waterBill/selectedWaterBiller/selectedWaterBiller.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/pipedGas/selectPipedGasProvider/selectPipedGasProvider.dart';
 import 'package:flutter/material.dart';
 
-import '../fastagRecharge/selectedFatagRecharge/selectedFastagRecharge.dart';
-
-class WaterBillScreen extends StatefulWidget {
-  const WaterBillScreen({Key? key}) : super(key: key);
+class PipedGasScreen extends StatefulWidget {
+  const PipedGasScreen({super.key});
 
   @override
-  State<WaterBillScreen> createState() => _WaterBillScreenState();
+  State<PipedGasScreen> createState() => _PipedGasScreenState();
 }
 
-class _WaterBillScreenState extends State<WaterBillScreen> {
-
-  List waterProviders = [
+class _PipedGasScreenState extends State<PipedGasScreen> {
+  List pipedGasProviders = [
     {
-      "waterProviderName" : "Delhi Development Authority",
-      "waterProviderLogo" : "assets/images/delhi_development_authority.png",
+      "pipedGasProviderName" : "Bhagyanagar Gas Limited",
+      "pipedGasProviderLogo" : "assets/images/bhagyanagar_gas.png",
     },
     {
-      "waterProviderName" : "Delhi Jal Board",
-      "waterProviderLogo" : "assets/images/delhi_jal_board.png",
+      "pipedGasProviderName" : "GAIL Gas Limited",
+      "pipedGasProviderLogo" : "assets/images/gail-gas.png",
     },
     {
-      "waterProviderName" : "New Delhi Municipal Council",
-      "waterProviderLogo" : "assets/images/new_delhi_municipal_council.png",
+      "pipedGasProviderName" : "GAIL Limited",
+      "pipedGasProviderLogo" : "assets/images/gail-gas.png",
     },
     {
-      "waterProviderName" : "Bangalore Water Supply and Sewerage Board",
-      "waterProviderLogo" : "assets/images/banglore_water_supply_and_sewerage_board.png",
+      "pipedGasProviderName" : "Indraprastha Gas",
+      "pipedGasProviderLogo" : "assets/images/igl-gas.png",
     },
     {
-      "waterProviderName" : "City Municipal Council",
-      "waterProviderLogo" : "assets/images/city_municipal_council.png",
+      "pipedGasProviderName" : "Megha Gas",
+      "pipedGasProviderLogo" : "assets/images/megha-gas.png",
     },
     {
-      "waterProviderName" : "Haryana metropolitan Water Supply and Sewerage Board",
-      "waterProviderLogo" : "assets/images/haryana_metropolitan_water_supply.png",
+      "pipedGasProviderName" : "Adani Gas",
+      "pipedGasProviderLogo" : "assets/images/adani-gas.png",
     },
   ];
 
@@ -54,7 +51,7 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
               color: Colors.black,
             )
         ),
-        title: const Text("Select Water Provider", style: TextStyle(
+        title: const Text("Select Gas Provider", style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
             fontFamily: "Montserrat",
@@ -102,9 +99,9 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                         leading: SizedBox(
                           width: 50,
                           height: 50,
-                          child: Image.asset("assets/images/delhi_jal_board.png"),
+                          child: Image.asset("assets/images/igl-gas.png"),
                         ),
-                        title: const Text("Delhi Jal Board", style: TextStyle(
+                        title: const Text("Indraprastha Gas", style: TextStyle(
                             fontFamily: "Montserrat",
                             fontSize: 16,
                             fontWeight: FontWeight.w600
@@ -114,12 +111,12 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                           children: [
                             Padding(
                               padding: EdgeInsets.symmetric(vertical: 8.0),
-                              child: Text("1445420000", style: TextStyle(
+                              child: Text("0000000000", style: TextStyle(
                                 fontFamily: "Montserrat",
                                 fontSize: 16,
                               )),
                             ),
-                            Text("Last paid ₹3000 on 05 September 2022", style: TextStyle(
+                            Text("Last paid ₹300 on 05 September 2022", style: TextStyle(
                                 fontFamily: "Montserrat",
                                 fontSize: 10,
                                 color: Color.fromRGBO(1, 1, 1, 1)
@@ -182,17 +179,17 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                   physics: const ScrollPhysics(),
                   itemBuilder: (BuildContext context, int index){
                     return ListTile(
-                      title: Text(waterProviders[index]["waterProviderName"]),
+                      title: Text(pipedGasProviders[index]["pipedGasProviderName"]),
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SelectedWaterBillerScreen(
-                          selectedWaterProvider: waterProviders[index],
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SelectPipedGasProviderScreen(
+                          selectedPipedGasProvider: pipedGasProviders[index],
                         )));
                       },
                       contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 0),
                       leading: SizedBox(
                         width: 50,
                         height: 50,
-                        child: Image.asset(waterProviders[index]["waterProviderLogo"]),
+                        child: Image.asset(pipedGasProviders[index]["pipedGasProviderLogo"]),
                       ),
                     );
                   },
@@ -201,7 +198,7 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                       color: Color.fromRGBO(221, 221, 221, 1),
                     );
                   },
-                  itemCount: waterProviders.length
+                  itemCount: pipedGasProviders.length
               )
             ],
           ),

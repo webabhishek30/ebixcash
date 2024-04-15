@@ -1,20 +1,19 @@
-import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/fastagRecharge/selectedFatagRecharge/selectFastagPlan/selectFastagPlan.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/waterBill/selectedWaterBiller/selectedWaterBillerPayment/selectedWaterBillerPayment.dart';
 import 'package:flutter/material.dart';
 
+class SelectedWaterBillerScreen extends StatefulWidget {
 
-class SelectedFastagProviderScreen extends StatefulWidget {
+  Map<String, dynamic> selectedWaterProvider;
 
-  Map<String, dynamic> selectedFastagProvider;
-
-  SelectedFastagProviderScreen({required this.selectedFastagProvider, super.key});
+  SelectedWaterBillerScreen({required this.selectedWaterProvider, super.key});
 
   @override
-  State<SelectedFastagProviderScreen> createState() => _SelectedFastagProviderScreenState();
+  State<SelectedWaterBillerScreen> createState() => _SelectedWaterBillerScreenState();
 }
 
-class _SelectedFastagProviderScreenState extends State<SelectedFastagProviderScreen> {
+class _SelectedWaterBillerScreenState extends State<SelectedWaterBillerScreen> {
 
-  final TextEditingController vehicleNumberController = TextEditingController();
+  final TextEditingController kNumberController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +30,7 @@ class _SelectedFastagProviderScreenState extends State<SelectedFastagProviderScr
               color: Colors.black,
             )
         ),
-        title: Text(widget.selectedFastagProvider["fastagProviderName"], style: const TextStyle(
+        title: Text(widget.selectedWaterProvider["waterProviderName"], style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
             fontFamily: "Montserrat",
@@ -51,21 +50,33 @@ class _SelectedFastagProviderScreenState extends State<SelectedFastagProviderScr
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(20),
-          child: TextFormField(
-            controller: vehicleNumberController,
-            decoration: InputDecoration(
-                hintText: "vehicle registered number",
-                hintStyle: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: "Montserrat"
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TextFormField(
+                controller: kNumberController,
+                decoration: InputDecoration(
+                    hintText: "K No",
+                    hintStyle: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: "Montserrat"
+                    ),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5)
+                    )
                 ),
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(5)
-                )
-            ),
-
-          ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text("Please Enter Valid K No", style: TextStyle(
+                fontFamily: "Montserrat",
+                fontSize: 10,
+                color: Color.fromRGBO(133, 132, 132, 1)
+              ),)
+            ],
+          )
         ),
       ),
       bottomNavigationBar: SizedBox(
@@ -82,9 +93,9 @@ class _SelectedFastagProviderScreenState extends State<SelectedFastagProviderScr
                 )
             ),
             onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => SelectFastagPlanScreen(
-                selectedFastagProvider: widget.selectedFastagProvider,
-                vehicleNumber: vehicleNumberController.text,
+              Navigator.push(context, MaterialPageRoute(builder: (context) => SelectedWaterBillerPaymentScreen(
+                selectedWaterProvider: widget.selectedWaterProvider,
+                kNumber: kNumberController.text,
               )));
             },
             child: Text(

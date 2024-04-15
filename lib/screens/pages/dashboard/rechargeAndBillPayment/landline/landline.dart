@@ -1,42 +1,35 @@
-import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/waterBill/selectedWaterBiller/selectedWaterBiller.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/landline/selectLandlineProvider/selectLandlineProvider.dart';
 import 'package:flutter/material.dart';
 
-import '../fastagRecharge/selectedFatagRecharge/selectedFastagRecharge.dart';
-
-class WaterBillScreen extends StatefulWidget {
-  const WaterBillScreen({Key? key}) : super(key: key);
+class LandlineScreen extends StatefulWidget {
+  const LandlineScreen({super.key});
 
   @override
-  State<WaterBillScreen> createState() => _WaterBillScreenState();
+  State<LandlineScreen> createState() => _LandlineScreenState();
 }
 
-class _WaterBillScreenState extends State<WaterBillScreen> {
-
-  List waterProviders = [
+class _LandlineScreenState extends State<LandlineScreen> {
+  List landlineProviders = [
     {
-      "waterProviderName" : "Delhi Development Authority",
-      "waterProviderLogo" : "assets/images/delhi_development_authority.png",
+      "landlineProviderName" : "MTNL",
+      "landlineProviderLogo" : "assets/images/act-broadband.png",
     },
     {
-      "waterProviderName" : "Delhi Jal Board",
-      "waterProviderLogo" : "assets/images/delhi_jal_board.png",
+      "landlineProviderName" : "Tata Docomo",
+      "landlineProviderLogo" : "assets/images/airtel.png",
     },
     {
-      "waterProviderName" : "New Delhi Municipal Council",
-      "waterProviderLogo" : "assets/images/new_delhi_municipal_council.png",
+      "landlineProviderName" : "Airtel Landline",
+      "landlineProviderLogo" : "assets/images/airtel.png",
     },
     {
-      "waterProviderName" : "Bangalore Water Supply and Sewerage Board",
-      "waterProviderLogo" : "assets/images/banglore_water_supply_and_sewerage_board.png",
+      "landlineProviderName" : "BSNL Landline - Corporate",
+      "landlineProviderLogo" : "assets/images/bsnl-landline.png",
     },
     {
-      "waterProviderName" : "City Municipal Council",
-      "waterProviderLogo" : "assets/images/city_municipal_council.png",
-    },
-    {
-      "waterProviderName" : "Haryana metropolitan Water Supply and Sewerage Board",
-      "waterProviderLogo" : "assets/images/haryana_metropolitan_water_supply.png",
-    },
+      "landlineProviderName" : "Reliance",
+      "landlineProviderLogo" : "assets/images/excell-broadband.png",
+    }
   ];
 
   @override
@@ -54,7 +47,7 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
               color: Colors.black,
             )
         ),
-        title: const Text("Select Water Provider", style: TextStyle(
+        title: const Text("Landline Providers", style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
             fontFamily: "Montserrat",
@@ -102,9 +95,9 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                         leading: SizedBox(
                           width: 50,
                           height: 50,
-                          child: Image.asset("assets/images/delhi_jal_board.png"),
+                          child: Image.asset("assets/images/bsnl-landline.png"),
                         ),
-                        title: const Text("Delhi Jal Board", style: TextStyle(
+                        title: const Text("BSNL Landline", style: TextStyle(
                             fontFamily: "Montserrat",
                             fontSize: 16,
                             fontWeight: FontWeight.w600
@@ -114,16 +107,11 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                           children: [
                             Padding(
                               padding: EdgeInsets.symmetric(vertical: 8.0),
-                              child: Text("1445420000", style: TextStyle(
+                              child: Text("2248175475", style: TextStyle(
                                 fontFamily: "Montserrat",
                                 fontSize: 16,
                               )),
                             ),
-                            Text("Last paid ₹3000 on 05 September 2022", style: TextStyle(
-                                fontFamily: "Montserrat",
-                                fontSize: 10,
-                                color: Color.fromRGBO(1, 1, 1, 1)
-                            ),)
                           ],
                         ),
                       ),
@@ -182,17 +170,17 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                   physics: const ScrollPhysics(),
                   itemBuilder: (BuildContext context, int index){
                     return ListTile(
-                      title: Text(waterProviders[index]["waterProviderName"]),
+                      title: Text(landlineProviders[index]["landlineProviderName"]),
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SelectedWaterBillerScreen(
-                          selectedWaterProvider: waterProviders[index],
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SelectLandlineProviderScreen(
+                          selectLandlineProvider: landlineProviders[index],
                         )));
                       },
                       contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 0),
                       leading: SizedBox(
                         width: 50,
                         height: 50,
-                        child: Image.asset(waterProviders[index]["waterProviderLogo"]),
+                        child: Image.asset(landlineProviders[index]["landlineProviderLogo"]),
                       ),
                     );
                   },
@@ -201,7 +189,7 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                       color: Color.fromRGBO(221, 221, 221, 1),
                     );
                   },
-                  itemCount: waterProviders.length
+                  itemCount: landlineProviders.length
               )
             ],
           ),

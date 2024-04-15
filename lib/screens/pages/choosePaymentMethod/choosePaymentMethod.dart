@@ -76,6 +76,29 @@ class _ChoosePaymentMethodScreenState extends State<ChoosePaymentMethodScreen> {
       case "Fastag Recharge" :
         amount = widget.amount!;
         break;
+      case "Pay Water Bill" :
+        amount = widget.amount!;
+        break;
+      case "Pay Electricity Bill" :
+        amount = widget.amount!;
+        break;
+      case "Pay Pipped Gas Bill" :
+        amount = widget.amount!;
+        break;
+      case "Pay Broadband Bill" :
+        amount = widget.amount!;
+        break;
+      case "Pay Cable TV Bill" :
+        amount = widget.amount!;
+        break;
+      case "Pay LPG Bill" :
+        amount = widget.amount!;
+        break;
+      case "Pay Landline Bill" :
+        amount = widget.amount!;
+        break;
+
+
     }
 
     return Scaffold(

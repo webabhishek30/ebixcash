@@ -1,42 +1,27 @@
-import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/waterBill/selectedWaterBiller/selectedWaterBiller.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/lpg/selectLpgProvider/selectLpgProvider.dart';
 import 'package:flutter/material.dart';
 
-import '../fastagRecharge/selectedFatagRecharge/selectedFastagRecharge.dart';
-
-class WaterBillScreen extends StatefulWidget {
-  const WaterBillScreen({Key? key}) : super(key: key);
+class LpgScreen extends StatefulWidget {
+  const LpgScreen({super.key});
 
   @override
-  State<WaterBillScreen> createState() => _WaterBillScreenState();
+  State<LpgScreen> createState() => _LpgScreenState();
 }
 
-class _WaterBillScreenState extends State<WaterBillScreen> {
-
-  List waterProviders = [
+class _LpgScreenState extends State<LpgScreen> {
+  List lpgProviders = [
     {
-      "waterProviderName" : "Delhi Development Authority",
-      "waterProviderLogo" : "assets/images/delhi_development_authority.png",
+      "lpgProviderName" : "Bharat Gas",
+      "lpgProviderLogo" : "assets/images/bharat-gas.png",
     },
     {
-      "waterProviderName" : "Delhi Jal Board",
-      "waterProviderLogo" : "assets/images/delhi_jal_board.png",
+      "lpgProviderName" : "HP gas",
+      "lpgProviderLogo" : "assets/images/hp-gas.png",
     },
     {
-      "waterProviderName" : "New Delhi Municipal Council",
-      "waterProviderLogo" : "assets/images/new_delhi_municipal_council.png",
-    },
-    {
-      "waterProviderName" : "Bangalore Water Supply and Sewerage Board",
-      "waterProviderLogo" : "assets/images/banglore_water_supply_and_sewerage_board.png",
-    },
-    {
-      "waterProviderName" : "City Municipal Council",
-      "waterProviderLogo" : "assets/images/city_municipal_council.png",
-    },
-    {
-      "waterProviderName" : "Haryana metropolitan Water Supply and Sewerage Board",
-      "waterProviderLogo" : "assets/images/haryana_metropolitan_water_supply.png",
-    },
+      "lpgProviderName" : "Indane Gas (Indian Oil)",
+      "lpgProviderLogo" : "assets/images/indane-gas.png",
+    }
   ];
 
   @override
@@ -54,7 +39,7 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
               color: Colors.black,
             )
         ),
-        title: const Text("Select Water Provider", style: TextStyle(
+        title: const Text("Select Gas Provider", style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
             fontFamily: "Montserrat",
@@ -102,9 +87,9 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                         leading: SizedBox(
                           width: 50,
                           height: 50,
-                          child: Image.asset("assets/images/delhi_jal_board.png"),
+                          child: Image.asset("assets/images/indane-gas.png"),
                         ),
-                        title: const Text("Delhi Jal Board", style: TextStyle(
+                        title: const Text("Indane Gas (Indian Oil)", style: TextStyle(
                             fontFamily: "Montserrat",
                             fontSize: 16,
                             fontWeight: FontWeight.w600
@@ -114,16 +99,11 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                           children: [
                             Padding(
                               padding: EdgeInsets.symmetric(vertical: 8.0),
-                              child: Text("1445420000", style: TextStyle(
+                              child: Text("9910686363", style: TextStyle(
                                 fontFamily: "Montserrat",
                                 fontSize: 16,
                               )),
                             ),
-                            Text("Last paid ₹3000 on 05 September 2022", style: TextStyle(
-                                fontFamily: "Montserrat",
-                                fontSize: 10,
-                                color: Color.fromRGBO(1, 1, 1, 1)
-                            ),)
                           ],
                         ),
                       ),
@@ -134,26 +114,26 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
               const SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      hintText: "Search by Provider",
-                      hintStyle: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: "Montserrat"
-                      ),
-                      border: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                              color: Color.fromRGBO(225, 225, 225, 1)
-                          ),
-                          borderRadius: BorderRadius.circular(5)
-                      )
-                  ),
-
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 4.0),
+              //   child: TextFormField(
+              //     decoration: InputDecoration(
+              //         hintText: "Search by Operator",
+              //         hintStyle: const TextStyle(
+              //             fontSize: 16,
+              //             fontWeight: FontWeight.w400,
+              //             fontFamily: "Montserrat"
+              //         ),
+              //         border: OutlineInputBorder(
+              //             borderSide: const BorderSide(
+              //                 color: Color.fromRGBO(225, 225, 225, 1)
+              //             ),
+              //             borderRadius: BorderRadius.circular(5)
+              //         )
+              //     ),
+              //
+              //   ),
+              // ),
               const SizedBox(
                 height: 20,
               ),
@@ -182,17 +162,17 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                   physics: const ScrollPhysics(),
                   itemBuilder: (BuildContext context, int index){
                     return ListTile(
-                      title: Text(waterProviders[index]["waterProviderName"]),
+                      title: Text(lpgProviders[index]["lpgProviderName"]),
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SelectedWaterBillerScreen(
-                          selectedWaterProvider: waterProviders[index],
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SelectLpgProviderScreen(
+                          selectLpgProvider: lpgProviders[index],
                         )));
                       },
                       contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 0),
                       leading: SizedBox(
                         width: 50,
                         height: 50,
-                        child: Image.asset(waterProviders[index]["waterProviderLogo"]),
+                        child: Image.asset(lpgProviders[index]["lpgProviderLogo"]),
                       ),
                     );
                   },
@@ -201,7 +181,7 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                       color: Color.fromRGBO(221, 221, 221, 1),
                     );
                   },
-                  itemCount: waterProviders.length
+                  itemCount: lpgProviders.length
               )
             ],
           ),

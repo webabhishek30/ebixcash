@@ -1,41 +1,38 @@
-import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/waterBill/selectedWaterBiller/selectedWaterBiller.dart';
+import 'package:ebixcash/screens/pages/dashboard/rechargeAndBillPayment/broadband/selectBroadBandProvider/selectBroadBandProvider.dart';
 import 'package:flutter/material.dart';
 
-import '../fastagRecharge/selectedFatagRecharge/selectedFastagRecharge.dart';
-
-class WaterBillScreen extends StatefulWidget {
-  const WaterBillScreen({Key? key}) : super(key: key);
+class BroadBandScreen extends StatefulWidget {
+  const BroadBandScreen({super.key});
 
   @override
-  State<WaterBillScreen> createState() => _WaterBillScreenState();
+  State<BroadBandScreen> createState() => _BroadBandScreenState();
 }
 
-class _WaterBillScreenState extends State<WaterBillScreen> {
-
-  List waterProviders = [
+class _BroadBandScreenState extends State<BroadBandScreen> {
+  List broadBandProviders = [
     {
-      "waterProviderName" : "Delhi Development Authority",
-      "waterProviderLogo" : "assets/images/delhi_development_authority.png",
+      "broadBandProviderName" : "ACT Broadband",
+      "broadBandProviderLogo" : "assets/images/act-broadband.png",
     },
     {
-      "waterProviderName" : "Delhi Jal Board",
-      "waterProviderLogo" : "assets/images/delhi_jal_board.png",
+      "broadBandProviderName" : "Airtel Broadband",
+      "broadBandProviderLogo" : "assets/images/airtel.png",
     },
     {
-      "waterProviderName" : "New Delhi Municipal Council",
-      "waterProviderLogo" : "assets/images/new_delhi_municipal_council.png",
+      "broadBandProviderName" : "Airtel Landline",
+      "broadBandProviderLogo" : "assets/images/airtel.png",
     },
     {
-      "waterProviderName" : "Bangalore Water Supply and Sewerage Board",
-      "waterProviderLogo" : "assets/images/banglore_water_supply_and_sewerage_board.png",
+      "broadBandProviderName" : "BSNL Landline - Corporate",
+      "broadBandProviderLogo" : "assets/images/bsnl-landline.png",
     },
     {
-      "waterProviderName" : "City Municipal Council",
-      "waterProviderLogo" : "assets/images/city_municipal_council.png",
+      "broadBandProviderName" : "Excell Broadband",
+      "broadBandProviderLogo" : "assets/images/excell-broadband.png",
     },
     {
-      "waterProviderName" : "Haryana metropolitan Water Supply and Sewerage Board",
-      "waterProviderLogo" : "assets/images/haryana_metropolitan_water_supply.png",
+      "broadBandProviderName" : "Hathway Broadband",
+      "broadBandProviderLogo" : "assets/images/hathway-broadband.png",
     },
   ];
 
@@ -54,7 +51,7 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
               color: Colors.black,
             )
         ),
-        title: const Text("Select Water Provider", style: TextStyle(
+        title: const Text("Broadband Providers", style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
             fontFamily: "Montserrat",
@@ -102,9 +99,9 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                         leading: SizedBox(
                           width: 50,
                           height: 50,
-                          child: Image.asset("assets/images/delhi_jal_board.png"),
+                          child: Image.asset("assets/images/airtel.png"),
                         ),
-                        title: const Text("Delhi Jal Board", style: TextStyle(
+                        title: const Text("Airtel Broadband", style: TextStyle(
                             fontFamily: "Montserrat",
                             fontSize: 16,
                             fontWeight: FontWeight.w600
@@ -114,12 +111,12 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                           children: [
                             Padding(
                               padding: EdgeInsets.symmetric(vertical: 8.0),
-                              child: Text("1445420000", style: TextStyle(
+                              child: Text("9910686363", style: TextStyle(
                                 fontFamily: "Montserrat",
                                 fontSize: 16,
                               )),
                             ),
-                            Text("Last paid ₹3000 on 05 September 2022", style: TextStyle(
+                            Text("Last paid ₹750 on 05 September 2022", style: TextStyle(
                                 fontFamily: "Montserrat",
                                 fontSize: 10,
                                 color: Color.fromRGBO(1, 1, 1, 1)
@@ -182,17 +179,17 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                   physics: const ScrollPhysics(),
                   itemBuilder: (BuildContext context, int index){
                     return ListTile(
-                      title: Text(waterProviders[index]["waterProviderName"]),
+                      title: Text(broadBandProviders[index]["broadBandProviderName"]),
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SelectedWaterBillerScreen(
-                          selectedWaterProvider: waterProviders[index],
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SelectBroadBandProviderScreen(
+                          selectBroadBandProvider: broadBandProviders[index],
                         )));
                       },
                       contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 0),
                       leading: SizedBox(
                         width: 50,
                         height: 50,
-                        child: Image.asset(waterProviders[index]["waterProviderLogo"]),
+                        child: Image.asset(broadBandProviders[index]["broadBandProviderLogo"]),
                       ),
                     );
                   },
@@ -201,7 +198,7 @@ class _WaterBillScreenState extends State<WaterBillScreen> {
                       color: Color.fromRGBO(221, 221, 221, 1),
                     );
                   },
-                  itemCount: waterProviders.length
+                  itemCount: broadBandProviders.length
               )
             ],
           ),

@@ -16,7 +16,7 @@ class _RechargeAndBillPaymentScreenState extends State<RechargeAndBillPaymentScr
     {
       "title" : "Electricity",
       "icon" : "assets/images/electricity.png",
-      "pageName" : ""
+      "pageName" : "/electricityBill"
     },
     {
       "title" : "Water",
@@ -26,12 +26,12 @@ class _RechargeAndBillPaymentScreenState extends State<RechargeAndBillPaymentScr
     {
       "title" : "Piped Gas",
       "icon" : "assets/images/gas.png",
-      "pageName" : ""
+      "pageName" : "/pipedGas"
     },
     {
       "title" : "Broadband",
       "icon" : "assets/images/broadband.png",
-      "pageName" : ""
+      "pageName" : "/broadBand"
     },
     {
       "title" : "Education \n Fee",
@@ -41,17 +41,17 @@ class _RechargeAndBillPaymentScreenState extends State<RechargeAndBillPaymentScr
     {
       "title" : "Cable TV",
       "icon" : "assets/images/tv.png",
-      "pageName" : ""
+      "pageName" : "/cableTv"
     },
     {
       "title" : "LPG",
-      "icon" : "assets/images/credit_card.png",
-      "pageName" : ""
+      "icon" : "assets/images/gas.png",
+      "pageName" : "/lpg"
     },
     {
       "title" : "Landline",
       "icon" : "assets/images/landline.png",
-      "pageName" : ""
+      "pageName" : "/landline"
     },
   ];
 
